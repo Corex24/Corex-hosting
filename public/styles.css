@@ -1,0 +1,338 @@
+:root {
+    --primary: #6c5ce7;
+    --primary-dark: #5649c7;
+    --secondary: #a29bfe;
+    --success: #00b894;
+    --danger: #d63031;
+    --warning: #fdcb6e;
+    --dark: #2d3436;
+    --light: #f5f6fa;
+    --gray: #dfe6e9;
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Login Screen */
+.login-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo i {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gray);
+    color: var(--dark);
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--gray);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+button {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+#loginResult, #serverResult {
+    margin-top: 25px;
+    min-height: 50px;
+}
+
+.loading, .success, .error {
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loading {
+    background-color: rgba(253, 203, 110, 0.2);
+    color: #e17055;
+}
+
+.success {
+    background-color: rgba(0, 184, 148, 0.15);
+    color: var(--success);
+    border: 1px solid rgba(0, 184, 148, 0.3);
+}
+
+.error {
+    background-color: rgba(214, 48, 49, 0.1);
+    color: var(--danger);
+    border: 1px solid rgba(214, 48, 49, 0.2);
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+/* Dashboard */
+.dashboard-screen {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.brand h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info span {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#logoutBtn {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    flex: 1;
+}
+
+@media (min-width: 992px) {
+    .dashboard-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.server-display {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.server-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.server-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--primary);
+}
+
+.server-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.server-header i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.server-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+@media (min-width: 576px) {
+    .server-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.server-details div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Formatted Response */
+.formatted-response {
+    font-family: 'Courier New', monospace;
+    background: #2d3436;
+    color: #f5f6fa;
+    padding: 25px;
+    border-radius: 12px;
+    line-height: 1.8;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.response-line {
+    display: flex;
+}
+
+.response-bullet {
+    min-width: 30px;
+}
+
+.response-success {
+    color: #00b894;
+    font-weight: bold;
+}
+
+.response-username, .response-password {
+    color: #74b9ff;
+}
+
+.response-server {
+    color: #ffeaa7;
+}
+
+.response-resource {
+    color: #81ecec;
+}
+
+.response-link {
+    color: #55efc4;
+    text-decoration: underline;
+}
+
+.response-footer {
+    color: #a29bfe;
+    font-style: italic;
+}
