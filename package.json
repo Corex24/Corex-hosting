@@ -1,0 +1,19 @@
+{
+  "name": "corex-hosting",
+  "version": "1.0.0",
+  "description": "CoreX-Hosting Admin Panel",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel start",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vercel/node": "^2.15.3"
+  },
+  "engines": {
+    "node": ">=18.x"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
