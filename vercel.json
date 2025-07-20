@@ -1,15 +1,34 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "admin/package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
   "routes": [
     {
+      "src": "/",
+      "dest": "/public/index.html"
+    },
+    {
+      "src": "/api/login",
+      "dest": "/api/login.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/api/create-server",
+      "dest": "/api/create-server.js",
+      "methods": ["POST"]
+    },
+    {
       "src": "/(.*)",
-      "dest": "admin"
+      "status": 404,
+      "dest": "/public/index.html"
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ]
 }
